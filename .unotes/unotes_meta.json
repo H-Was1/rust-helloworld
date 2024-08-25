@@ -1,0 +1,33 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "modules": {
+          "name": "modules",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "target": {
+      "name": "target",
+      "isOrdered": true,
+      "folders": {
+        "debug": {
+          "name": "debug",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {}
+}

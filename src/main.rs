@@ -1,4 +1,7 @@
+mod modules; // Declare the modules folder
 fn main() {
+    // import a1 and a2 from ./a1.rs
+
     // let mut a = 4;
 
     // //  loop loop
@@ -44,19 +47,9 @@ fn main() {
     //     3 => println!("three"),
     //     _ => println!("other"),
     // }
-
-    // // if else statement
-
-    // let c = 6;
-    // if c % 2 == 0 {
-    //     println!("even");
-    // } else {
-    //     println!("odd");
-    // }
-    println!("{:?}", add(80, 80));
-    println!("{}", add(80, 900));
-}
-
-fn add(a: i16, b: i16) -> i16 {
-    a + b
+    // concat both type &str and creat full name variable
+    let first_name: &str = modules::names::a1();
+    let last_name = modules::names::a2();
+    let full_name = format!("{} {}", first_name, last_name);
+    println!("{}", full_name);
 }
