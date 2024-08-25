@@ -1,7 +1,5 @@
-mod modules; // Declare the modules folder
+mod modules;
 fn main() {
-    // import a1 and a2 from ./a1.rs
-
     // let mut a = 4;
 
     // //  loop loop
@@ -47,9 +45,6 @@ fn main() {
     //     3 => println!("three"),
     //     _ => println!("other"),
     // }
-    // concat both type &str and creat full name variable
-    let first_name: &str = modules::names::a1();
-    let last_name = modules::names::a2();
-    let full_name = format!("{} {}", first_name, last_name);
-    println!("{}", full_name);
+
+    modules::matcher::coin_matcher("Penny");
 }
