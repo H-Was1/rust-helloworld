@@ -16,6 +16,10 @@ enum COINS {
 pub fn coin_matcher(coin: &str) {
     let go = if coin == "Penny" {
         COINS::Penny
+    } else if coin == "Dime" {
+        COINS::Dime
+    } else if coin == "Quarter" {
+        COINS::Quarter
     } else {
         COINS::Nickel
     };
