@@ -6,4 +6,4 @@
 // let dev = User {
 //     age : 32,
 //     email: String::from("john.doe@example.com"),
-// } 
+// }

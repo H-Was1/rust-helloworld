@@ -74,6 +74,8 @@ fn main() {
         }
     };
     println!("division: {}", result);
+
+    let str_data:String = String::from("Rust");
 }
 
 fn divider(a: u32, b: u32) -> Result<u32, String> {
