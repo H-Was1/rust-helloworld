@@ -1,8 +1,9 @@
-// #[derive(Debug)]
+#[derive(Debug)]
 struct Product {
     name: String,
     price: f32,
     inStock: bool,
+    category: Category,
 }
 
 enum Category {
@@ -20,19 +21,23 @@ impl Product {
     fn buy_one(&self) {
         println!("{} was bought for: {}", self.name, self.price);
     }
-    fn new(name: String, price: f32) -> Product {
+    fn new(name: String, price: f32, category: Category) -> Product {
         Product {
             name,
             price,
             inStock: true,
+            category,
         }
     }
 }
 
 fn main() {
-    let mut Laptop = Product::new("Lenovo Ideapad".to_string(), 230.9);
+    let mut Laptop = Product::new("Lenovo Ideapad".to_string(), 230.9, Category::Electronics);
     let sales_tax = Laptop.calculate_sales_tax();
     Laptop.set_price(2000.99);
     Laptop.buy_one();
-    println!("sales tax for {} is: {}", Laptop.name, sales_tax);
+    println!(
+        "sales tax for {} is: {} that belongs to {:?}",
+        Laptop.name, sales_tax, Laptop
+    );
 }
