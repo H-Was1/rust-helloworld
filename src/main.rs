@@ -1,4 +1,3 @@
-#[derive(Debug)]
 struct Product {
     name: String,
     price: f32,
@@ -32,12 +31,10 @@ impl Product {
 }
 
 fn main() {
-    let mut Laptop = Product::new("Lenovo Ideapad".to_string(), 230.9, Category::Electronics);
+    let category = Category::Electronics;
+    let mut Laptop = Product::new("Lenovo Ideapad".to_string(), 230.9, category);
     let sales_tax = Laptop.calculate_sales_tax();
     Laptop.set_price(2000.99);
     Laptop.buy_one();
-    println!(
-        "sales tax for {} is: {} that belongs to {:?}",
-        Laptop.name, sales_tax, Laptop
-    );
+    println!("sales tax for {} is: {}", Laptop.name, sales_tax);
 }
