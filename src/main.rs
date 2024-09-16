@@ -1,40 +1,25 @@
-struct Product {
-    name: String,
-    price: f32,
-    inStock: bool,
-    category: Category,
-}
-
-enum Category {
-    Electronics,
-    Furniture,
-    Learning,
-}
-impl Product {
-    fn calculate_sales_tax(&self) -> f32 {
-        self.price * 0.1
-    }
-    fn set_price(&mut self, price: f32) {
-        self.price = price;
-    }
-    fn buy_one(&self) {
-        println!("{} was bought for: {}", self.name, self.price);
-    }
-    fn new(name: String, price: f32, category: Category) -> Product {
-        Product {
-            name,
-            price,
-            inStock: true,
-            category,
-        }
-    }
-}
-
 fn main() {
-    let category = Category::Electronics;
-    let mut Laptop = Product::new("Lenovo Ideapad".to_string(), 230.9, category);
-    let sales_tax = Laptop.calculate_sales_tax();
-    Laptop.set_price(2000.99);
-    Laptop.buy_one();
-    println!("sales tax for {} is: {}", Laptop.name, sales_tax);
+    let id = 14;
+    let username = get_username(&id);
+    match &username {
+        Some(username) => println!("{}", username),
+        None => println!("User not found"),
+    }
+    if let Some(name) = username {
+        println!("The username is {}", name);
+    }
+}
+
+fn get_username(id: &u32) -> Option<String> {
+    let query = format!("SELECT * FROM users WHERE id = {}", &id);
+    let result = query_db(&"");
+    result.ok()
+}
+
+fn query_db(query: &str) -> Result<String, String> {
+    if (query.is_empty()) {
+        Err("Query database is empty".to_string())
+    } else {
+        Ok("Ferris".to_string())
+    }
 }
