@@ -12,7 +12,7 @@ fn main() {
 
 fn get_username(id: &u32) -> Option<String> {
     let query = format!("SELECT * FROM users WHERE id = {}", &id);
-    let result = query_db(&"hello");
+    let result = query_db(&"hello"); 
     result.ok()
 }
 
